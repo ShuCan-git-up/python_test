@@ -1,6 +1,17 @@
 #coding=utf-8
+import xlwt
 
 
+def saveTvInforma(i, name, introduction, icon):
+    workbook1.write(i, 0, name)
+    workbook1.write(i, 1 , introduction)
+    link = 'HYPERLINK("%s";"%s")' % ( icon, icon )
+    workbook1.write(i, 2, xlwt.Formula(link))
+    workbook.save(r'/Users/shucan/python_pachong/excel/tv.xlsx')
+
+# worksheet.write(0, 0, xlwt.Formula('HYPERLINK("http://www.google.com";"Google")') # 超链接书写进excel
+workbook = xlwt.Workbook(encoding='utf-8')
+workbook1 = workbook.add_sheet("tv")
 # for可以遍历任何序列的项目如一个列表或者一个字符串
 # for lette in "letter":
 #     print lette,
@@ -46,15 +57,18 @@
 # print "my name is %s and age is %d" % ("舒灿", 23)
 
 list1 = ["1", "2", 3]
-list2 = ["1", "2", "3"]
+# list2 = ["1", "2", "3"]
 #Python 3.X 的版本中已经没有 cmp 函数，如果你需要实现比较功能，需要引入 operator 模块，适合任何对象
-print cmp(list1, list2)
+# print cmp(list1, list2)
 
 # 默认Pop出最后一个index=-1，可以自己设定
-print list1.pop();
-print list1
+# print list1.pop();
+# print list1
+#
+# tup = (1)
+# print tup
 
-tup = (1)
-print tup
+for i in range(0, list1.__len__()):
+    print i
 
 #任意无符号的对象，以逗号隔开，默认为元组

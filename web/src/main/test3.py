@@ -25,14 +25,14 @@ def imgurl(url):
 def imgpage(page):
     res = requests.get('http://www.mzitu.com/page/' + str(page))
     soup = BeautifulSoup(res.text, 'html.parser')
-    # print soup
+    print soup
     href = soup.select('#pins a')
     # print '开始挑选'
     # print href
     list = set([i.get('href') for i in href])
     print list
     # [imgurl(i) for i in list]
-    imgpage_select_one(list.pop())
+    # imgpage_select_one(list.pop())
 
 
 def imgpage_select_one(url):
